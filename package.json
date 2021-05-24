@@ -1,8 +1,8 @@
 {
   "name": "abakus",
-  "version": "1.0.0",
-  "description": "Made with create-react-library",
-  "author": "kolezka",
+  "version": "0.0.1",
+  "description": "Abakus is table component for projects based on tailwindcss and react ",
+  "author": "kolezka (Mariusz Rakus)",
   "license": "MIT",
   "repository": "kolezka/abakus",
   "main": "dist/index.js",
