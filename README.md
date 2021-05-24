@@ -1,9 +1,5 @@
 # abakus
 
-> Made with create-react-library
-
-[![NPM](https://img.shields.io/npm/v/abakus.svg)](https://www.npmjs.com/package/abakus) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
-
 ## Install
 
 ```bash
@@ -14,15 +10,45 @@ npm install --save abakus
 
 ```tsx
 import React, { Component } from 'react'
+import { Table } from 'abakus'
 
-import MyComponent from 'abakus'
-import 'abakus/dist/index.css'
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
+const UsersTable = ({ users }) => {
+
+  const columns: Column<IData>[] = [
+    {
+      field: "id",
+      title: 'No',
+      width: 50,
+    },
+    {
+      title: 'Name',
+      field: "name"
+    },
+    {
+      title: 'Surname',
+      field: "surname",
+    },
+    {
+      field: "",
+      title: "Actions",
+      width: 150,
+      classNames: {
+        header: 'text-right pr-4',
+        root: 'text-right pr-4'
+      },
+      // Delete user button
+      renderCol: (_, row) => <button onClick={() => remove(row)} className='text-sm border border-black border-opacity-50 bg-black bg-opacity-20 hover:bg-opacity-30 py-1 px-2 rounded-md'>Delete</button>
+    }
+  ];
+
+  return (
+    <Table
+      data={users}
+      columns={columns} />
+  );
 }
+
 ```
 
 ## License
