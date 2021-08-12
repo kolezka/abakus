@@ -6,6 +6,8 @@
 npm install --save abakus
 ```
 
+## Package webpage <https://abakus.raqz.pl/>
+
 ## Usage
 
 ```tsx
