@@ -16,16 +16,16 @@ export const TableHeader: React.FC<ITableHeaderProps> = ({
   columns,
   classNames
 }) => {
-  const renderColumn = (column: Column<any>) => {
+  const renderColumn = (column: Column<any>, index: number) => {
     if (column.renderHeaderCol) {
-      return column.renderHeaderCol(column)
+      return column.renderHeaderCol(column, index)
     }
     return column.title || column.field
   }
 
   return (
     <div className={clsx('flex', classNames?.root)}>
-      {columns.map((column) => (
+      {columns.map((column, index) => (
         <div
           className={clsx(
             'flex-1',
@@ -37,7 +37,7 @@ export const TableHeader: React.FC<ITableHeaderProps> = ({
             maxWidth: column.width
           }}
         >
-          {renderColumn(column)}
+          {renderColumn(column, index)}
         </div>
       ))}
     </div>

@@ -19,9 +19,9 @@ export const TableBody: React.FC<ITableBodyProps> = ({
   data,
   classNames
 }) => {
-  const renderColumn = (column: Column<any>, row: any) => {
+  const renderColumn = (column: Column<any>, row: any, index: number) => {
     if (column.renderCol) {
-      return column.renderCol(column, row)
+      return column.renderCol(column, row, index)
     }
     return row[column.field]
   }
@@ -39,13 +39,13 @@ export const TableBody: React.FC<ITableBodyProps> = ({
               className={clsx(
                 'flex-1',
                 classNames?.column,
-                column.classNames?.root
+                column.classNames?.body
               )}
               style={{
                 maxWidth: column.width
               }}
             >
-              {renderColumn(column, row)}
+              {renderColumn(column, row, index)}
             </div>
           ))}
         </div>
