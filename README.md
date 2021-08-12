@@ -1,12 +1,10 @@
-# abakus
+# abakus <https://abakus.raqz.pl/>
 
 ## Install
 
 ```bash
 npm install --save abakus
 ```
-
-## Package webpage <https://abakus.raqz.pl/>
 
 ## Usage
 
